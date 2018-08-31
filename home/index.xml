@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Homes on Jim Liu</title>
+    <link>https://jimapps.github.io/home/</link>
+    <description>Recent content in Homes on Jim Liu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018 - Xiaojin (Jim) Liu</copyright>
+    <lastBuildDate>Wed, 28 Feb 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://jimapps.github.io/home/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://jimapps.github.io/home/about/</link>
+      <pubDate>Wed, 28 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jimapps.github.io/home/about/</guid>
+      <description>Download my CV: PDF
+Xiaojin (Jim) Liu is an assistant professor of Supply Chain Management and Analytics at the School of Business, Virginia Commonwealth University. His research is focused on developing and evaluating innovative and responsible operations around management practices related to human capital and technology. His work is always motivated by real world challenges in global supply chains that require firms to align their operations with the needs of multiple stakeholders.</description>
+    </item>
+    
+    <item>
+      <title>Selected Publications</title>
+      <link>https://jimapps.github.io/home/publications_selected/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 -0400</pubDate>
+      
+      <guid>https://jimapps.github.io/home/publications_selected/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Recent Publications</title>
+      <link>https://jimapps.github.io/home/publications/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 -0400</pubDate>
+      
+      <guid>https://jimapps.github.io/home/publications/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Recent &amp; Upcoming Talks</title>
+      <link>https://jimapps.github.io/home/talks/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://jimapps.github.io/home/talks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Projects</title>
+      <link>https://jimapps.github.io/home/projects/</link>
+      <pubDate>Tue, 27 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jimapps.github.io/home/projects/</guid>
+      <description> How does social orientation influence firm innovation?  With R. Chao $5,000, Batten Institute Fellows Program, University of Virginia, 2016-2017.  Sustainable and responsible design and management of global supply chains: Designing work and improving working conditions in supplier factories in developing countries.  With A. Mishra, S.M. Goldstein, K.K. Sinha $30,500, Wells Fargo Foundation - Sustainability Research Grant Program, University of Minnesota, 2015-2016.  </description>
+    </item>
+    
+    <item>
+      <title>Teaching</title>
+      <link>https://jimapps.github.io/home/teaching/</link>
+      <pubDate>Tue, 27 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jimapps.github.io/home/teaching/</guid>
+      <description>SCO 2550, Business Statistics: Data Sources, Presentation, and Analysis. ~ 70 undergraduate students</description>
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>https://jimapps.github.io/home/contact/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://jimapps.github.io/home/contact/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
