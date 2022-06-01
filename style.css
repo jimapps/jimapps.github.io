@@ -117,6 +117,10 @@ d-article h3, d-article h4, d-article h5, d-article h6 {
     color: #a22417;
 }
 
+d-article h4 {
+    font-size: 16px;
+}
+
 d-article p {
     font-size: 16px;
     line-height: 1.3em;
@@ -127,7 +131,7 @@ d-article p a {
 }
 
 d-article nav {
-    max-width: 400px;
+    max-width: 350px;
 }
 
 
