@@ -123,7 +123,7 @@ d-article h4 {
 
 d-article p {
     font-size: 16px;
-    line-height: 1.3em;
+    line-height: 1.5;
 }
 
 d-article p a {
@@ -177,6 +177,10 @@ ol ul,
 ul ol {
   margin-bottom: 1rem;
 }
+
+.pub ul li {
+  font-size: 0.95rem;
+} 
 
 
 .rev-lists > ol {
