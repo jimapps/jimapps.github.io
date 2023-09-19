@@ -751,15 +751,11 @@
           }
 
           d-article h4 {
-              font-size: 1.2em;
-          }
-
-          d-article h3 {
-              font-size: 1.25em;
+              font-size: 16px;
           }
 
           d-article p {
-              font-size: 1.1em;
+              font-size: 16px;
               line-height: 1.5;
           }
 
@@ -796,10 +792,6 @@
               grid-gap: 20px;
           }
 
-          p {
-            font-size: 1.15rem;
-          }
-
           h1 {
             font-size: 2rem;
           }
@@ -823,10 +815,6 @@
             font-size: 0.95rem;
           } 
 
-          .aboutme p {
-            font-size: 1.1rem;
-            text-indent: 20px;
-          } 
 
           .rev-lists > ol {
             list-style-type:none;
@@ -847,6 +835,15 @@
           }
           </style>
           <script src="D:\programs\R\R-4.1.3\library\rmarkdown\rmd\h\pandoc\header-attrs.js"></script>
+          <script src="D:\programs\R\R-4.1.3\library\htmlwidgets\www\htmlwidgets.js"></script>
+          <script src="D:\programs\R\R-4.1.3\library\leaflet\htmlwidgets\lib\jquery\jquery.min.js"></script>
+          <link href="D:\programs\R\R-4.1.3\library\leaflet\htmlwidgets\lib\leaflet\leaflet.css" rel="stylesheet" />
+          <script src="D:\programs\R\R-4.1.3\library\leaflet\htmlwidgets\lib\leaflet\leaflet.js"></script>
+          <link href="D:\programs\R\R-4.1.3\library\leaflet\htmlwidgets\lib\leafletfix\leafletfix.css" rel="stylesheet" />
+          <script src="D:\programs\R\R-4.1.3\library\leaflet\htmlwidgets\plugins\Proj4Leaflet\proj4.min.js"></script>
+          <script src="D:\programs\R\R-4.1.3\library\leaflet\htmlwidgets\plugins\Proj4Leaflet\proj4leaflet.js"></script>
+          <link href="D:\programs\R\R-4.1.3\library\leaflet\htmlwidgets\lib\rstudio_leaflet\rstudio_leaflet.css" rel="stylesheet" />
+          <script src="D:\programs\R\R-4.1.3\library\leaflet\htmlwidgets\leaflet.js"></script>
     
     
   </head>
@@ -920,29 +917,32 @@
         <div class="d-flex flex-column vh-100 border-left"></div>
         <div class="d-flex flex-column col px-5 align-items-center align-self-center mh-100" style="overflow-y: scroll;">
           <div class="my-5" id="content">
+            <p>Assistant Professor<br />
+            Supply Chain Management and Analytics<br />
+            School of Business<br />
+            Virginia Commonwealth University</p>
             <p>Download my CV (PDF): <a
-            href="fiCV_Xiaojin_Jim_Liu_2023Sep.pdf"
-            target="_blank">Curriculum Vitae</a></p>
-            <p>I am an associate professor of <a
-            href="https://business.vcu.edu/academics/supply-chain-management-and-analytics/"
-            target="_blank">Supply Chain Management and Analytics</a> at
-            the <a href="https://business.vcu.edu/"
-            target="_blank">School of Business</a>, <a
-            href="https://www.vcu.edu/" target="_blank">Virginia
-            Commonwealth University</a>.</p>
-            <p>My research is focused on developing and evaluating
-            innovative and responsible operations around management
-            practices related to human capital and technology. This work
-            is always motivated by real world challenges in global
-            supply chains that require firms to align their operations
-            with the needs of many stakeholders in different markets.
-            People along supply chains care about what organizations do,
-            and organizations can play a major role in the major issues.
-            In particular, I aim to understand 1) how firms encompass
-            innovative and responsible operation practices in the value
-            creation process, and 2) given the emerging need, how firms
-            develop and manage their technology effectively, in their
-            own country and the global markets.</p>
+            href="files/CV_Xiaojin_Jim_Liu_2022May.pdf">Curriculum
+            Vitae</a></p>
+            <p>I am an assistant professor of <a
+            href="https://business.vcu.edu/academics/supply-chain-management-and-analytics/">Supply
+            Chain Management and Analytics</a> at the <a
+            href="https://business.vcu.edu/">School of Business</a>, <a
+            href="https://www.vcu.edu/">Virginia Commonwealth
+            University</a>. My research is focused on developing and
+            evaluating innovative and responsible operations around
+            management practices related to human capital and
+            technology. This work is always motivated by real world
+            challenges in global supply chains that require firms to
+            align their operations with the needs of many stakeholders
+            in different markets. People along supply chains care about
+            what organizations do, and organizations can play a major
+            role in the major issues. In particular, I aim to understand
+            1) how firms encompass innovative and responsible operation
+            practices in the value creation process, and 2) given the
+            emerging need, how firms develop and manage their technology
+            effectively, in their own country and the global
+            markets.</p>
             <p>To address research questions in these two streams, I
             conduct analysis through the application of empirical and
             computational methods involving statistics, econometrics,
@@ -961,200 +961,48 @@
             <h2>Education/Work</h2>
             <ul>
             <li>Post-doctoral Senior Researcher, 2018<br />
-            <a href="https://www.darden.virginia.edu/"
-            target="_blank">University of Virginia, Darden School of
-            Business</a></li>
+            <a href="https://www.darden.virginia.edu/">University of
+            Virginia, Darden School of Business</a></li>
             <li>Ph.D. in Supply Chain and Operations Department,
             2016<br />
-            <a href="https://carlsonschool.umn.edu/"
-            target="_blank">University of Minnesota, Carlson</a></li>
+            <a href="https://carlsonschool.umn.edu/">University of
+            Minnesota, Carlson</a></li>
             <li>M.Phil. in Logistics and Maritime Studies, 2011<br />
-            <a href="https://www.polyu.edu.hk/lms/" target="_blank">Hong
-            Kong Polytechnic University</a></li>
+            <a href="http://www.lms.polyu.edu.hk/">Hong Kong Polytechnic
+            University</a></li>
             <li>B.A. in Bio-medical English and B.M. in E-Business,
             2009<br />
-            <a href="http://english.pku.edu.cn/" target="_blank">Peking
-            University, China</a></li>
+            <a href="http://english.pku.edu.cn/">Peking University,
+            China</a></li>
             </ul>
             </div>
             </div>
             <div id="selected-publications" class="section level2">
             <h2>Selected Publications</h2>
-            <ol reversed>
-            <li>
-            <p>
-            Shockley, J., Merrick, J. R., Liu, X., Smith, J. S. 2023.
-            How much do customer ordering practices drive medical
-            supplies distribution (in)efficiency for primary care
-            markets? <b><i>Production and Operations Management</i></b>,
-            forthcoming. <a
-            href="https://onlinelibrary.wiley.com/doi/abs/10.1111/poms.14068"
-            target="_blank">Link</a>
-            </p>
-            </li>
-            <li>
-            <p>
-            <p>Chen, K., X. Liu, Y. Li, K. Linderman. 2023. “Government
-            support and cross-border innovation: The effect of China’s
-            Innovative City Policy on Chinese firms’ patenting in the
-            U.S.” <b><i>Production and Operations Management</i></b>, 32
-            (6), 1793-1811. <a
-            href="https://onlinelibrary.wiley.com/doi/10.1111/poms.13941"
-            target="_blank">Link</a></p>
             <ul>
-            <li>Finalist, and Runner Up for the <a
-            href="https://connect.informs.org/times/awards/best-working-paper"
-            target="_blank">2022 INFORMS TIMES Best Working Paper Award
-            (Second Place)</a>, INFORMS Annual Meeting.</li>
+            <li><p>Towards improving factory working conditions in
+            developing countries: An empirical analysis of Bangladesh
+            Ready-Made garment factories</p></li>
+            <li><p>The moderating effects of knowledge characteristics
+            of firms on the financial value of innovative technology
+            products</p></li>
             </ul>
-            </p>
-            </li>
-            <li>
-            <p>
-            <p>Liu, X., Y. Kou, J. Shockley, J. Smith. 2023. “How does
-            supplier CSR performance help to expand exchange
-            relationships with major buyers? The moderating role of
-            supply-side and demand-driven uncertainty.” <b><i>Decision
-            Sciences (DS)</i></b>, 54 (3), 334-357. <a
-            href="https://onlinelibrary.wiley.com/doi/10.1111/deci.12551"
-            target="_blank">Link</a></p>
-            <ul>
-            <li>Profiled in <a
-            href="https://business.vcu.edu/about-us/news/news-articles/how-does-supplier-csr-performance-help-to-expand-exchange-relationships.html"
-            target="_blank">VCU School of Business News about Research
-            Articles</a>, <a
-            href="https://www.linkedin.com/posts/virginia-commonwealth-university---school-of-business_vcu-school-of-business-professorsxiaojin-activity-6886721545150984192-zATW/"
-            target="_blank">LinkedIn - Virginia Commonwealth University
-            - School of Business</a>.</li>
-            </ul>
-            </p>
-            </li>
-            <li>
-            <p>
-            <p>Adbi, A., X. Liu, A. Mishra. 2022. “Technology licensing
-            and productivity growth: Evidence from manufacturing firms
-            in developing economies.” <b><i>Manufacturing and Service
-            Operations Management (MSOM)</i></b>, 24 (1), 214-234. <a
-            href="https://pubsonline.informs.org/doi/10.1287/msom.2020.0946"
-            target="_blank">Link</a></p>
-            <ul>
-            <li>Profiled in <a
-            href="https://business.vcu.edu/about-us/news/news-articles/technology-licensing-and-productivity-growth.html"
-            target="_blank">VCU School of Business News about Research
-            Articles</a>, <a
-            href="https://www.linkedin.com/posts/virginia-commonwealth-university---school-of-business_vcu-school-of-business-professorxiaojin-activity-6884187639289790464-0BDJ/"
-            target="_blank">LinkedIn - Virginia Commonwealth University
-            - School of Business</a>.
-            </li></li>
-            </ul>
-            <li>
-            <p>
-            Kumar, P., X. Liu, A. Zaheer. 2022. “How much does the
-            firm’s network matter?” <b><i>Strategic Management Journal
-            (SMJ)</i></b>, 43 (8), 1433-1468. <a
-            href="https://onlinelibrary.wiley.com/doi/10.1002/smj.3379"
-            target="_blank">Link</a>
-            </p>
-            </li>
-            <li>
-            <p>
-            <p>Smith, J. S., J. Shockley, S. Anderson, X. Liu. 2022.
-            “Tension in the emergency department? The impact of flow
-            stage times on managing patient-reported experiences and
-            financial productivity.” <b><i>Decision Sciences
-            (DS)</i></b>, 53 (3), 514-556. <a
-            href="https://onlinelibrary.wiley.com/doi/10.1111/deci.12503"
-            target="_blank">Link</a></p>
-            <ul>
-            <li>Profiled in <a
-            href="https://business.vcu.edu/about-us/news/news-articles/tension-in-the-emergency-department.html"
-            target="_blank">VCU School of Business News about Research
-            Articles</a>, <a
-            href="https://www.linkedin.com/feed/update/urn:li:activity:6887844622761005056/"
-            target="_blank">LinkedIn - Virginia Commonwealth University
-            - School of Business</a>.</li>
-            </ul>
-            </p>
-            </li>
-            <li>
-            <p>
-            <p>Kang S., X. Liu, Y. Kim, V. Yoon. 2021. “Can bots help
-            create knowledge? The effects of bot intervention in open
-            collaboration.” <b><i>Decision Support Systems
-            (DSS)</i></b>, 148, 113601. <a
-            href="https://www.sciencedirect.com/science/article/pii/S0167923621001111"
-            target="_blank">Link</a></p>
-            <ul>
-            <li>Profiled in <a
-            href="https://business.vcu.edu/about-us/news/news-articles/can-bots-help-create-knowledge.html"
-            target="_blank">VCU School of Business News about Research
-            Articles</a>, <a
-            href="https://www.linkedin.com/posts/virginia-commonwealth-university---school-of-business_vcu-school-of-business-professorsyeongin-activity-6886377925701079040-6HpN"
-            target="_blank">LinkedIn - Virginia Commonwealth University
-            - School of Business</a>, <a
-            href="https://web.archive.org/web/20210714200321/https:/academictimes.com/bots-could-decrease-user-participation-on-collaborative-websites/"
-            target="_blank">The Academic Times</a>.</li>
-            </ul>
-            </p>
-            </li>
-            <li>
-            <p>
-            Shockley, J., P. Collignon, X. Liu. 2020. “Why do so many
-            good assembly plants close? Toward a new plant stakeholder
-            and total lifecycle management strategy.” <b><i>Rutgers
-            Business Review</i></b>, 5(1), 61-83. <a
-            href="https://rbr.business.rutgers.edu/article/why-do-so-many-good-assembly-plants-close-toward-new-plant-stakeholder-and-total-lifecycle"
-            target="_blank">Link</a>
-            </p>
-            </li>
-            <li>
-            <p>
-            <p>Liu, X., A. Mishra, S.M. Goldstein, K.K. Sinha. 2019.
-            “Towards improving factory working conditions in developing
-            countries: An empirical analysis of Bangladesh Ready-Made
-            garment factories.” <b><i>Manufacturing &amp; Service
-            Operations Management (MSOM)</i></b>, 21(2), 251-477. <a
-            href="https://pubsonline.informs.org/doi/10.1287/msom.2017.0679"
-            target="_blank">Link</a></p>
-            <ul>
-            <li>Profiled in the <a
-            href="https://www.library.hbs.edu/working-conditions-in-supply-chains/citations/toward-improving-factory-working-conditions-in-developing-countries-an-empirical-analysis-of-bangladesh-ready-made-garment-factories"
-            target="_blank">Harvard Business School - Key Insights for
-            Managers</a>, <a
-            href="https://www.youtube.com/watch?v=2bVbZwyK6zE&amp;feature=youtu.be"
-            target="_blank">Media Coverage - Carlson School</a>, <a
-            href="https://www.startribune.com/lee-schafer-retailers-do-care-what-happens-in-far-off-apparel-factories/468161183/"
-            target="_blank">StarTribune</a>, <a
-            href="https://www.informs.org/Blogs/M-SOM-Blogs/M-SOM-Review/Designing-and-Sustaining-Socially-Responsible-Global-Supply-Chains-Lessons-from-Bangladesh"
-            target="_blank">M&amp;SOM Blogs</a>.</li>
-            </ul>
-            </p>
-            </li>
-            <li>
-            <p>
-            Liu, X., A.C. Yeung, C.K.Y Lo, T.C.E Cheng. 2014. “The
-            moderating effects of knowledge characteristics on the
-            financial value of innovative technology products.”
-            <b><i>Journal of Operations Management (JOM)</i></b>, 32(3),
-            79-87. <a
-            href="https://onlinelibrary.wiley.com/doi/full/10.1016/j.jom.2013.11.003"
-            target="_blank">Link</a>
-            </p>
-            </li>
-            </ol>
             </div>
             <div id="teaching" class="section level2">
             <h2>Teaching</h2>
             <ul>
-            <li>Operations Management</li>
-            <li>Production and Operations Management</li>
-            <li>Business Statistics II</li>
+            <li>SCMA 675 - Operations Management</li>
+            <li>SCMA 320 - Production and Operations Management</li>
+            <li>SCMA 302 - Business Statistics II</li>
             </ul>
             </div>
-            <div id="location" class="section level2">
-            <h2>Location</h2>
+            <div id="contact" class="section level2">
+            <h2>Contact</h2>
+            <p><a href="mailto:xliu22@vcu.edu">Email</a></p>
             <p>301 West Main Street, Richmond, Virginia 23284-4000,
             USA</p>
+            <div id="htmlwidget-9905c1aa75e85f16048a" style="width:100%;height:480px;" class="leaflet html-widget"></div>
+            <script type="application/json" data-for="htmlwidget-9905c1aa75e85f16048a">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addPopups","args":[42.0285,-93.65,"Here is the <b>Department of Statistics<\/b>, ISU",null,null,{"maxWidth":300,"minWidth":50,"autoPan":true,"keepInView":false,"closeButton":true,"className":""}]}],"setView":[[42.0285,-93.65],17,[]],"limits":{"lat":[42.0285,42.0285],"lng":[-93.65,-93.65]}},"evals":[],"jsHooks":[]}</script>
             </div>
           </div>
         </div>
@@ -1200,25 +1048,27 @@
               </div>
             </div>
             <div class="p pt-4 px-5">
+              <p>Assistant Professor<br />
+              Supply Chain Management and Analytics<br />
+              School of Business<br />
+              Virginia Commonwealth University</p>
               <p>Download my CV (PDF): <a
-              href="fiCV_Xiaojin_Jim_Liu_2023Sep.pdf"
-              target="_blank">Curriculum Vitae</a></p>
-              <p>I am an associate professor of <a
-              href="https://business.vcu.edu/academics/supply-chain-management-and-analytics/"
-              target="_blank">Supply Chain Management and Analytics</a>
-              at the <a href="https://business.vcu.edu/"
-              target="_blank">School of Business</a>, <a
-              href="https://www.vcu.edu/" target="_blank">Virginia
-              Commonwealth University</a>.</p>
-              <p>My research is focused on developing and evaluating
-              innovative and responsible operations around management
-              practices related to human capital and technology. This
-              work is always motivated by real world challenges in
-              global supply chains that require firms to align their
-              operations with the needs of many stakeholders in
-              different markets. People along supply chains care about
-              what organizations do, and organizations can play a major
-              role in the major issues. In particular, I aim to
+              href="files/CV_Xiaojin_Jim_Liu_2022May.pdf">Curriculum
+              Vitae</a></p>
+              <p>I am an assistant professor of <a
+              href="https://business.vcu.edu/academics/supply-chain-management-and-analytics/">Supply
+              Chain Management and Analytics</a> at the <a
+              href="https://business.vcu.edu/">School of Business</a>,
+              <a href="https://www.vcu.edu/">Virginia Commonwealth
+              University</a>. My research is focused on developing and
+              evaluating innovative and responsible operations around
+              management practices related to human capital and
+              technology. This work is always motivated by real world
+              challenges in global supply chains that require firms to
+              align their operations with the needs of many stakeholders
+              in different markets. People along supply chains care
+              about what organizations do, and organizations can play a
+              major role in the major issues. In particular, I aim to
               understand 1) how firms encompass innovative and
               responsible operation practices in the value creation
               process, and 2) given the emerging need, how firms develop
@@ -1242,202 +1092,48 @@
               <h2>Education/Work</h2>
               <ul>
               <li>Post-doctoral Senior Researcher, 2018<br />
-              <a href="https://www.darden.virginia.edu/"
-              target="_blank">University of Virginia, Darden School of
-              Business</a></li>
+              <a href="https://www.darden.virginia.edu/">University of
+              Virginia, Darden School of Business</a></li>
               <li>Ph.D. in Supply Chain and Operations Department,
               2016<br />
-              <a href="https://carlsonschool.umn.edu/"
-              target="_blank">University of Minnesota, Carlson</a></li>
+              <a href="https://carlsonschool.umn.edu/">University of
+              Minnesota, Carlson</a></li>
               <li>M.Phil. in Logistics and Maritime Studies, 2011<br />
-              <a href="https://www.polyu.edu.hk/lms/"
-              target="_blank">Hong Kong Polytechnic University</a></li>
+              <a href="http://www.lms.polyu.edu.hk/">Hong Kong
+              Polytechnic University</a></li>
               <li>B.A. in Bio-medical English and B.M. in E-Business,
               2009<br />
-              <a href="http://english.pku.edu.cn/"
-              target="_blank">Peking University, China</a></li>
+              <a href="http://english.pku.edu.cn/">Peking University,
+              China</a></li>
               </ul>
               </div>
               </div>
               <div id="selected-publications" class="section level2">
               <h2>Selected Publications</h2>
-              <ol reversed>
-              <li>
-              <p>
-              Shockley, J., Merrick, J. R., Liu, X., Smith, J. S. 2023.
-              How much do customer ordering practices drive medical
-              supplies distribution (in)efficiency for primary care
-              markets? <b><i>Production and Operations
-              Management</i></b>, forthcoming. <a
-              href="https://onlinelibrary.wiley.com/doi/abs/10.1111/poms.14068"
-              target="_blank">Link</a>
-              </p>
-              </li>
-              <li>
-              <p>
-              <p>Chen, K., X. Liu, Y. Li, K. Linderman. 2023.
-              “Government support and cross-border innovation: The
-              effect of China’s Innovative City Policy on Chinese firms’
-              patenting in the U.S.” <b><i>Production and Operations
-              Management</i></b>, 32 (6), 1793-1811. <a
-              href="https://onlinelibrary.wiley.com/doi/10.1111/poms.13941"
-              target="_blank">Link</a></p>
               <ul>
-              <li>Finalist, and Runner Up for the <a
-              href="https://connect.informs.org/times/awards/best-working-paper"
-              target="_blank">2022 INFORMS TIMES Best Working Paper
-              Award (Second Place)</a>, INFORMS Annual Meeting.</li>
-              </ul>
-              </p>
-              </li>
-              <li>
-              <p>
-              <p>Liu, X., Y. Kou, J. Shockley, J. Smith. 2023. “How does
-              supplier CSR performance help to expand exchange
-              relationships with major buyers? The moderating role of
-              supply-side and demand-driven uncertainty.” <b><i>Decision
-              Sciences (DS)</i></b>, 54 (3), 334-357. <a
-              href="https://onlinelibrary.wiley.com/doi/10.1111/deci.12551"
-              target="_blank">Link</a></p>
-              <ul>
-              <li>Profiled in <a
-              href="https://business.vcu.edu/about-us/news/news-articles/how-does-supplier-csr-performance-help-to-expand-exchange-relationships.html"
-              target="_blank">VCU School of Business News about Research
-              Articles</a>, <a
-              href="https://www.linkedin.com/posts/virginia-commonwealth-university---school-of-business_vcu-school-of-business-professorsxiaojin-activity-6886721545150984192-zATW/"
-              target="_blank">LinkedIn - Virginia Commonwealth
-              University - School of Business</a>.</li>
-              </ul>
-              </p>
-              </li>
-              <li>
-              <p>
-              <p>Adbi, A., X. Liu, A. Mishra. 2022. “Technology
-              licensing and productivity growth: Evidence from
-              manufacturing firms in developing economies.”
-              <b><i>Manufacturing and Service Operations Management
-              (MSOM)</i></b>, 24 (1), 214-234. <a
-              href="https://pubsonline.informs.org/doi/10.1287/msom.2020.0946"
-              target="_blank">Link</a></p>
-              <ul>
-              <li>Profiled in <a
-              href="https://business.vcu.edu/about-us/news/news-articles/technology-licensing-and-productivity-growth.html"
-              target="_blank">VCU School of Business News about Research
-              Articles</a>, <a
-              href="https://www.linkedin.com/posts/virginia-commonwealth-university---school-of-business_vcu-school-of-business-professorxiaojin-activity-6884187639289790464-0BDJ/"
-              target="_blank">LinkedIn - Virginia Commonwealth
-              University - School of Business</a>.
-              </li></li>
-              </ul>
-              <li>
-              <p>
-              Kumar, P., X. Liu, A. Zaheer. 2022. “How much does the
-              firm’s network matter?” <b><i>Strategic Management Journal
-              (SMJ)</i></b>, 43 (8), 1433-1468. <a
-              href="https://onlinelibrary.wiley.com/doi/10.1002/smj.3379"
-              target="_blank">Link</a>
-              </p>
-              </li>
-              <li>
-              <p>
-              <p>Smith, J. S., J. Shockley, S. Anderson, X. Liu. 2022.
-              “Tension in the emergency department? The impact of flow
-              stage times on managing patient-reported experiences and
-              financial productivity.” <b><i>Decision Sciences
-              (DS)</i></b>, 53 (3), 514-556. <a
-              href="https://onlinelibrary.wiley.com/doi/10.1111/deci.12503"
-              target="_blank">Link</a></p>
-              <ul>
-              <li>Profiled in <a
-              href="https://business.vcu.edu/about-us/news/news-articles/tension-in-the-emergency-department.html"
-              target="_blank">VCU School of Business News about Research
-              Articles</a>, <a
-              href="https://www.linkedin.com/feed/update/urn:li:activity:6887844622761005056/"
-              target="_blank">LinkedIn - Virginia Commonwealth
-              University - School of Business</a>.</li>
-              </ul>
-              </p>
-              </li>
-              <li>
-              <p>
-              <p>Kang S., X. Liu, Y. Kim, V. Yoon. 2021. “Can bots help
-              create knowledge? The effects of bot intervention in open
-              collaboration.” <b><i>Decision Support Systems
-              (DSS)</i></b>, 148, 113601. <a
-              href="https://www.sciencedirect.com/science/article/pii/S0167923621001111"
-              target="_blank">Link</a></p>
-              <ul>
-              <li>Profiled in <a
-              href="https://business.vcu.edu/about-us/news/news-articles/can-bots-help-create-knowledge.html"
-              target="_blank">VCU School of Business News about Research
-              Articles</a>, <a
-              href="https://www.linkedin.com/posts/virginia-commonwealth-university---school-of-business_vcu-school-of-business-professorsyeongin-activity-6886377925701079040-6HpN"
-              target="_blank">LinkedIn - Virginia Commonwealth
-              University - School of Business</a>, <a
-              href="https://web.archive.org/web/20210714200321/https:/academictimes.com/bots-could-decrease-user-participation-on-collaborative-websites/"
-              target="_blank">The Academic Times</a>.</li>
-              </ul>
-              </p>
-              </li>
-              <li>
-              <p>
-              Shockley, J., P. Collignon, X. Liu. 2020. “Why do so many
-              good assembly plants close? Toward a new plant stakeholder
-              and total lifecycle management strategy.” <b><i>Rutgers
-              Business Review</i></b>, 5(1), 61-83. <a
-              href="https://rbr.business.rutgers.edu/article/why-do-so-many-good-assembly-plants-close-toward-new-plant-stakeholder-and-total-lifecycle"
-              target="_blank">Link</a>
-              </p>
-              </li>
-              <li>
-              <p>
-              <p>Liu, X., A. Mishra, S.M. Goldstein, K.K. Sinha. 2019.
-              “Towards improving factory working conditions in
+              <li><p>Towards improving factory working conditions in
               developing countries: An empirical analysis of Bangladesh
-              Ready-Made garment factories.” <b><i>Manufacturing &amp;
-              Service Operations Management (MSOM)</i></b>, 21(2),
-              251-477. <a
-              href="https://pubsonline.informs.org/doi/10.1287/msom.2017.0679"
-              target="_blank">Link</a></p>
-              <ul>
-              <li>Profiled in the <a
-              href="https://www.library.hbs.edu/working-conditions-in-supply-chains/citations/toward-improving-factory-working-conditions-in-developing-countries-an-empirical-analysis-of-bangladesh-ready-made-garment-factories"
-              target="_blank">Harvard Business School - Key Insights for
-              Managers</a>, <a
-              href="https://www.youtube.com/watch?v=2bVbZwyK6zE&amp;feature=youtu.be"
-              target="_blank">Media Coverage - Carlson School</a>, <a
-              href="https://www.startribune.com/lee-schafer-retailers-do-care-what-happens-in-far-off-apparel-factories/468161183/"
-              target="_blank">StarTribune</a>, <a
-              href="https://www.informs.org/Blogs/M-SOM-Blogs/M-SOM-Review/Designing-and-Sustaining-Socially-Responsible-Global-Supply-Chains-Lessons-from-Bangladesh"
-              target="_blank">M&amp;SOM Blogs</a>.</li>
+              Ready-Made garment factories</p></li>
+              <li><p>The moderating effects of knowledge characteristics
+              of firms on the financial value of innovative technology
+              products</p></li>
               </ul>
-              </p>
-              </li>
-              <li>
-              <p>
-              Liu, X., A.C. Yeung, C.K.Y Lo, T.C.E Cheng. 2014. “The
-              moderating effects of knowledge characteristics on the
-              financial value of innovative technology products.”
-              <b><i>Journal of Operations Management (JOM)</i></b>,
-              32(3), 79-87. <a
-              href="https://onlinelibrary.wiley.com/doi/full/10.1016/j.jom.2013.11.003"
-              target="_blank">Link</a>
-              </p>
-              </li>
-              </ol>
               </div>
               <div id="teaching" class="section level2">
               <h2>Teaching</h2>
               <ul>
-              <li>Operations Management</li>
-              <li>Production and Operations Management</li>
-              <li>Business Statistics II</li>
+              <li>SCMA 675 - Operations Management</li>
+              <li>SCMA 320 - Production and Operations Management</li>
+              <li>SCMA 302 - Business Statistics II</li>
               </ul>
               </div>
-              <div id="location" class="section level2">
-              <h2>Location</h2>
+              <div id="contact" class="section level2">
+              <h2>Contact</h2>
+              <p><a href="mailto:xliu22@vcu.edu">Email</a></p>
               <p>301 West Main Street, Richmond, Virginia 23284-4000,
               USA</p>
+              <div id="htmlwidget-9905c1aa75e85f16048a" style="width:100%;height:480px;" class="leaflet html-widget"></div>
+              <script type="application/json" data-for="htmlwidget-9905c1aa75e85f16048a">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addPopups","args":[42.0285,-93.65,"Here is the <b>Department of Statistics<\/b>, ISU",null,null,{"maxWidth":300,"minWidth":50,"autoPan":true,"keepInView":false,"closeButton":true,"className":""}]}],"setView":[[42.0285,-93.65],17,[]],"limits":{"lat":[42.0285,42.0285],"lng":[-93.65,-93.65]}},"evals":[],"jsHooks":[]}</script>
               </div>
             </div>
         </div>
@@ -1455,12 +1151,7 @@
       <!--radix_placeholder_navigation_after_body-->
       <div class="distill-site-nav distill-site-footer">
       <footer class="site-footer">
-       
-        <div class="container" align='middle'>
-          <p class="powered-by">
-           &copy; Xiaojin (Jim) Liu 2023 
-          </p>
-          
+      <div align='middle'>
                 <script type="text/javascript"
                 src="https://counter7.fcs.ovh/private/counter.js?c=175f5ade0bb1dbc7ee669eff1c409a98"></script>
                 <br />
@@ -1470,8 +1161,13 @@
                     <img src="https://counter7.fcs.ovh/private/freecounterstat.php?c=175f5ade0bb1dbc7ee669eff1c409a98" border="0"
                     title="web counters" alt="web counters" />
                   </a>
-                </noscript>  
-                
+                </noscript>
+      </div>
+
+        <div class="container" align='middle'>
+          <p class="powered-by">
+           &copy; Xiaojin (Jim) Liu 2022 
+          </p>
         </div>
         
 
