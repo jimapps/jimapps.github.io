@@ -455,8 +455,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
 
   <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-  <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
-  <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
+  <link href="site_libs/font-awesome-6.4.2/css/all.min.css" rel="stylesheet"/>
+  <link href="site_libs/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
   <script src="site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
   <script src="site_libs/fuse-6.4.1/fuse.min.js"></script>
@@ -785,6 +785,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   d-article table.gt_table td,
   d-article table.gt_table th {
     border-bottom: none;
+    font-size: 100%;
   }
 
   .html-widget {
@@ -1857,15 +1858,21 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        if ($(this).children()[0].nodeName == "D-FOOTNOTE") {
-          var fn = $(this).children()[0]
+        const citeChild = $(this).children()[0]
+        // Do not process if @xyz has been used without escaping and without bibliography activated
+        // https://github.com/rstudio/distill/issues/466
+        if (citeChild === undefined) return true
+
+        if (citeChild.nodeName == "D-FOOTNOTE") {
+          var fn = citeChild
           $(this).html(fn.shadowRoot.querySelector("sup"))
           $(this).id = fn.id
           fn.remove()
         }
         var refs = $(this).attr('data-cites').split(" ");
         var refHtml = refs.map(function(ref) {
-          return "<p>" + $('#ref-' + ref).html() + "</p>";
+          // Could use CSS.escape too here, we insure backward compatibility in navigator
+          return "<p>" + $('div[id="ref-' + ref + '"]').html() + "</p>";
         }).join("\n");
         window.tippy(this, {
           allowHTML: true,
@@ -2064,7 +2071,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2336,289 +2343,99 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a
-href="#selected-publication-innovative-and-responsible-operations-management"
-id="toc-selected-publication-innovative-and-responsible-operations-management">1.
-Selected Publication – Innovative and Responsible Operations
-Management:</a>
+<li><a href="#selected-publication-innovative-and-responsible-operations-management" id="toc-selected-publication-innovative-and-responsible-operations-management">1. Selected Publication – Innovative and Responsible Operations Management:</a>
 <ul>
-<li><a
-href="#towards-improving-factory-working-conditions-in-developing-countries-an-empirical-analysis-of-bangladesh-ready-made-garment-factories-msom"
-id="toc-towards-improving-factory-working-conditions-in-developing-countries-an-empirical-analysis-of-bangladesh-ready-made-garment-factories-msom">Towards
-improving factory working conditions in developing countries: An
-empirical analysis of Bangladesh Ready-Made garment factories
-[MSOM]</a></li>
-<li><a
-href="#how-does-supplier-csr-performance-help-to-expand-exchange-relationships-with-major-buyers-the-moderating-role-of-supply-side-and-demand-driven-uncertainty-ds"
-id="toc-how-does-supplier-csr-performance-help-to-expand-exchange-relationships-with-major-buyers-the-moderating-role-of-supply-side-and-demand-driven-uncertainty-ds">How
-does supplier CSR performance help to expand exchange relationships with
-major buyers? The moderating role of supply-side and demand-driven
-uncertainty [DS]</a></li>
+<li><a href="#towards-improving-factory-working-conditions-in-developing-countries-an-empirical-analysis-of-bangladesh-ready-made-garment-factories-msom" id="toc-towards-improving-factory-working-conditions-in-developing-countries-an-empirical-analysis-of-bangladesh-ready-made-garment-factories-msom">Towards improving factory working conditions in developing countries: An empirical analysis of Bangladesh Ready-Made garment factories [MSOM]</a></li>
+<li><a href="#how-does-supplier-csr-performance-help-to-expand-exchange-relationships-with-major-buyers-the-moderating-role-of-supply-side-and-demand-driven-uncertainty-ds" id="toc-how-does-supplier-csr-performance-help-to-expand-exchange-relationships-with-major-buyers-the-moderating-role-of-supply-side-and-demand-driven-uncertainty-ds">How does supplier CSR performance help to expand exchange relationships with major buyers? The moderating role of supply-side and demand-driven uncertainty [DS]</a></li>
 </ul></li>
-<li><a href="#selected-publication---managing-technology-and-process"
-id="toc-selected-publication---managing-technology-and-process">2.
-Selected Publication - Managing Technology and Process:</a>
+<li><a href="#selected-publication---managing-technology-and-process" id="toc-selected-publication---managing-technology-and-process">2. Selected Publication - Managing Technology and Process:</a>
 <ul>
-<li><a
-href="#technology-licensing-and-productivity-growth-evidence-from-manufacturing-firms-in-developing-economies-msom"
-id="toc-technology-licensing-and-productivity-growth-evidence-from-manufacturing-firms-in-developing-economies-msom">Technology
-licensing and productivity growth: Evidence from manufacturing firms in
-developing economies [MSOM]</a></li>
-<li><a href="#how-much-does-the-firms-alliance-network-matter-smj"
-id="toc-how-much-does-the-firms-alliance-network-matter-smj">How much
-does the firm’s alliance network matter? [SMJ]</a></li>
-<li><a
-href="#government-support-and-cross-border-innovation-the-effect-of-chinas-innovative-city-policy-on-chinese-firms-patenting-in-the-u.s.-pom"
-id="toc-government-support-and-cross-border-innovation-the-effect-of-chinas-innovative-city-policy-on-chinese-firms-patenting-in-the-u.s.-pom">Government
-support and cross-border innovation: The Effect of China’s innovative
-city policy on chinese firms’ patenting in the U.S. [POM]</a></li>
-<li><a
-href="#can-bots-help-create-knowledge-the-effects-of-bot-intervention-in-open-collaboration-dss"
-id="toc-can-bots-help-create-knowledge-the-effects-of-bot-intervention-in-open-collaboration-dss">Can
-bots help create knowledge? The effects of bot intervention in open
-collaboration [DSS]</a></li>
-<li><a
-href="#how-much-do-customer-ordering-practices-drive-medical-supplies-distribution-inefficiency-for-primary-care-markets-pom"
-id="toc-how-much-do-customer-ordering-practices-drive-medical-supplies-distribution-inefficiency-for-primary-care-markets-pom">How
-much do customer ordering practices drive medical supplies distribution
-(in)efficiency for primary care markets? [POM]</a></li>
-<li><a
-href="#the-moderating-effects-of-knowledge-characteristics-on-the-financial-value-of-innovative-technology-products-jom"
-id="toc-the-moderating-effects-of-knowledge-characteristics-on-the-financial-value-of-innovative-technology-products-jom">The
-moderating effects of knowledge characteristics on the financial value
-of innovative technology products [JOM]</a></li>
+<li><a href="#technology-licensing-and-productivity-growth-evidence-from-manufacturing-firms-in-developing-economies-msom" id="toc-technology-licensing-and-productivity-growth-evidence-from-manufacturing-firms-in-developing-economies-msom">Technology licensing and productivity growth: Evidence from manufacturing firms in developing economies [MSOM]</a></li>
+<li><a href="#how-much-does-the-firms-alliance-network-matter-smj" id="toc-how-much-does-the-firms-alliance-network-matter-smj">How much does the firm’s alliance network matter? [SMJ]</a></li>
+<li><a href="#government-support-and-cross-border-innovation-the-effect-of-chinas-innovative-city-policy-on-chinese-firms-patenting-in-the-u.s.-pom" id="toc-government-support-and-cross-border-innovation-the-effect-of-chinas-innovative-city-policy-on-chinese-firms-patenting-in-the-u.s.-pom">Government support and cross-border innovation: The Effect of China’s innovative city policy on chinese firms’ patenting in the U.S. [POM]</a></li>
+<li><a href="#can-bots-help-create-knowledge-the-effects-of-bot-intervention-in-open-collaboration-dss" id="toc-can-bots-help-create-knowledge-the-effects-of-bot-intervention-in-open-collaboration-dss">Can bots help create knowledge? The effects of bot intervention in open collaboration [DSS]</a></li>
+<li><a href="#how-much-do-customer-ordering-practices-drive-medical-supplies-distribution-inefficiency-for-primary-care-markets-pom" id="toc-how-much-do-customer-ordering-practices-drive-medical-supplies-distribution-inefficiency-for-primary-care-markets-pom">How much do customer ordering practices drive medical supplies distribution (in)efficiency for primary care markets? [POM]</a></li>
+<li><a href="#the-moderating-effects-of-knowledge-characteristics-on-the-financial-value-of-innovative-technology-products-jom" id="toc-the-moderating-effects-of-knowledge-characteristics-on-the-financial-value-of-innovative-technology-products-jom">The moderating effects of knowledge characteristics on the financial value of innovative technology products [JOM]</a></li>
 </ul></li>
 </ul>
 </nav>
 </div>
-<h3
-id="selected-publication-innovative-and-responsible-operations-management">1.
-Selected Publication – Innovative and Responsible Operations
-Management:</h3>
-<h4
-id="towards-improving-factory-working-conditions-in-developing-countries-an-empirical-analysis-of-bangladesh-ready-made-garment-factories-msom">Towards
-improving factory working conditions in developing countries: An
-empirical analysis of Bangladesh Ready-Made garment factories
-[MSOM]</h4>
-<p>I initiate this stream of work to understand how global brands and
-firms manage their socially responsible practices via novel approaches
-in whole supply chains. In this study, we focus on factories in the
-Bangladesh ready-made garment (RMG) industry that supply North American
-and European retailers, as upstream suppliers in supply chains. The
-setting is unique, because with supply chains now extending into
-developing countries, time and again, working conditions in supplier
-factories have been found to be unsafe. After the disasters (e.g,
-building collapse, plant fire, etc.) the global retailers have adopted
-an innovative approach to improving the working conditions of supplier
-factories by forming consortiums. The consortium of North American
-retailers is the Alliance for Bangladesh Worker Safety (Alliance). The
-consortium of European retailers is the Accord on Fire and Building
-Safety in Bangladesh (Accord). The central question addressed in this
-study is: How do working conditions in a supplier factory impact its
-trustworthiness as seen from a retailer’s perspective? Our empirical
-analyses support the contention that retailers are sensitive to working
-condition risks in a supplier factory, i.e., as working condition risks
-in a supplier factory increase, its trustworthiness decreases. However,
-these relationships vary with the type of risk. The above findings,
-taken together, provide nuanced insights into the marketplace
-implications of working condition risks in supplier factories. <a
-href="https://pubsonline.informs.org/doi/10.1287/msom.2017.0679"
-target="_blank">Link</a></p>
-<h4
-id="how-does-supplier-csr-performance-help-to-expand-exchange-relationships-with-major-buyers-the-moderating-role-of-supply-side-and-demand-driven-uncertainty-ds">How
-does supplier CSR performance help to expand exchange relationships with
-major buyers? The moderating role of supply-side and demand-driven
-uncertainty [DS]</h4>
-<p>I continue to investigate the implications of corporate social
-responsibility (CSR) performance on the supplier-buyer relationship in a
-supply chain context. Most existing works have been conducted from the
-buyer’s perspective. We take the supplier’s perspective and examine how
-suppliers leverage their CSR performance to expand exchange
-relationships with major customers. Specifically, we examine whether two
-supplier CSR performance dimensions—environmental and product
-performance—can serve as a mechanism to expand a supplier’s
-relationships with a smaller number of major buyers (which are developed
-to measure the exchange dependence relationship). We develop a
-large-scale longitudinal sample and find empirical evidence that a
-supplier’s environmental and product performance relate positively to
-greater customer dependence and improved financial performance across
-diverse sets of industries. However, the findings also reveal that both
-demand-driven and supply-side uncertainty can weaken the effect.
-Specifically, the positive effect of environmental performance tends to
-weaken in the face of supply-side uncertainty, whereas the positive
-effect of product performance tends to weaken amid demand-driven
-uncertainty. Our study contributes to the understanding of CSR from the
-resource dependence and social exchange perspective in supply chains. <a
-href="https://onlinelibrary.wiley.com/doi/10.1002/smj.3379"
-target="_blank">Link</a></p>
-<h3 id="selected-publication---managing-technology-and-process">2.
-Selected Publication - Managing Technology and Process:</h3>
-<h4
-id="technology-licensing-and-productivity-growth-evidence-from-manufacturing-firms-in-developing-economies-msom">Technology
-licensing and productivity growth: Evidence from manufacturing firms in
-developing economies [MSOM]</h4>
-<p>Besides my work on the innovative and responsible operations
-management, I also study how firms can manage technology and process to
-achieve better effectiveness, capability, and performance. In this
-published paper, we examine the relationship between technology
-licensing and firm productivity. From an operational perspective, we
-investigate the role of knowledge sourcing and its contingency in the
-improvement of firm performance in developing economies. We study firms
-from South and East Asian countries and their adoption and use of
-foreign technology licensing to strengthen their technology capability
-and the implication on firms’ productivity growth. To investigate this,
-we analyze detailed data of manufacturing firms in the developing
-economies. Our results indicate that the adoption of foreign technology
-by developing economy manufacturing firms has a substantial short-run
-disruptive effect on firm operations with productivity growth declining
-by 4.5 percentage points in these firms relative to comparable firms
-that do not use foreign technology licensing. Toward mitigating such
-disruptive effects, we find that formal workforce training programs
-attenuate the negative relationship between technology licensing and
-productivity growth. However, infrastructural constraints in the
-external business environment amplify this negative relationship.
-Intriguingly, our results suggest that corruption in the firm’s external
-environment can attenuate the negative impact of technology licensing on
-productivity growth. <a
-href="https://pubsonline.informs.org/doi/10.1287/msom.2020.0946"
-target="_blank">Link</a></p>
-<h4 id="how-much-does-the-firms-alliance-network-matter-smj">How much
-does the firm’s alliance network matter? [SMJ]</h4>
-<p>Network is critical in operations and supply chain management, and in
-this study, we further explore the broad role of alliance network on
-firm performance. Extant work partitioning the variance in firm
-(business segment) profitability has identified industry, corporate
-parent, business segment, and time as key factors. However, this
-variance decomposition research stream has overlooked the role of
-network. We employ a fast-unfolding community-detection algorithm to
-detect firms’ network memberships and use the Shapley Value method to
-isolate the effect of the firm’s alliance network, in addition to
-industry, corporate parent, business segment, and year effects, on the
-variance in business unit performance. Our findings demonstrate that the
-effect of the firm’s alliance network explains 11% of the variance in
-firm ROA among 16,381 business segments from 1979 through 1996. Our
-results also hold when we extend the time period through 2018. Thus, our
-study provides strong empirical evidence that alliance networks of firms
-are critical to firm value creation. <a
-href="https://onlinelibrary.wiley.com/doi/10.1002/smj.3379"
-target="_blank">Link</a></p>
-<h4
-id="government-support-and-cross-border-innovation-the-effect-of-chinas-innovative-city-policy-on-chinese-firms-patenting-in-the-u.s.-pom">Government
-support and cross-border innovation: The Effect of China’s innovative
-city policy on chinese firms’ patenting in the U.S. [POM]</h4>
-<p>In this project, we study how government support influence firms’
-cross-border innovation. Firms innovate their new processes and products
-not only within their countries, but also across national boundaries.
-This is known as cross-border innovation. Like many countries, China
-initiated the national “innovative city” policy 2009 and has been
-supporting global innovation of firms in selected cities, to converge
-with more developed countries. Informed by Porter’s Diamond Model, we
-conceptualize government support as slack resources and investigates how
-it affects a firm’s inventive activities in an uncertain, competitive
-global market. This study examines Chinese firms’ patent filings in the
-U.S. under the enactment of the “innovative city” policy. We apply
-matching and generalized difference-in-differences (DiD) techniques to
-this staggered quasi-experimental setting and find that government
-support stimulates firms’ cross-border innovation. We further show that
-firms with higher R&amp;D capacity take better advantage of government
-support. Finally, we show that government support leads to a rebalancing
-of exploratory and exploitative innovation such that a firm that has
-conducted more exploration will perform more exploitation and vice
-versa. Taken together, this study extends our understanding of slack
-from internal resources to government support in the context of global
-operations. Findings suggest that government actions that improve the
-ecosystem of innovation in one country strengthen firms’ innovation and
-competitiveness overseas. <a
-href="https://onlinelibrary.wiley.com/doi/10.1111/poms.13941"
-target="_blank">Link</a></p>
-<h4
-id="can-bots-help-create-knowledge-the-effects-of-bot-intervention-in-open-collaboration-dss">Can
-bots help create knowledge? The effects of bot intervention in open
-collaboration [DSS]</h4>
-<p>Over the past two decades, operations have become an essential part
-of management for many digital platforms. My recent work investigates
-the implication of the use of automated algorithmic agents, bots, on
-user participation and collaboration on a digital platform. This is
-because many open collaboration platforms (e.g., Wikipedia) have
-recently utilized bots to solve the issue of stagnating user
-participation. However, the impact of such a bot agent on user
-activities in open collaboration is unclear. In this study, we examine
-(i) whether bot intervention affects user participation, and (ii)
-whether the impact of bot intervention could vary by characteristics of
-open collaboration works. Utilizing a rich dataset from an online open
-collaboration platform from 2005 to 2017, we study two types of unique
-bots and their interactions with human users. The results from a
-difference-in-differences approach provide strong evidence that bot
-intervention in open collaboration leads to unintended consequences as
-it significantly demotivates user participation. We further show that
-the negative effect of bot intervention is alleviated if more active
-users are engaged or if covered topics have a higher concentration in
-collaboration work. This provides directions for businesses to resolve
-the unintended demotivation problem in utilizing bot agents. <a
-href="https://www.sciencedirect.com/science/article/pii/S0167923621001111"
-target="_blank">Link</a></p>
-<h4
-id="how-much-do-customer-ordering-practices-drive-medical-supplies-distribution-inefficiency-for-primary-care-markets-pom">How
-much do customer ordering practices drive medical supplies distribution
-(in)efficiency for primary care markets? [POM]</h4>
-<p>In this project, we study how a leading wholesale distributor in the
-business-to-business (B2B) primary care marketplace manages efficient
-distribution while facing various customer ordering behaviors. This
-distributor specializes in providing non-acute health care products to
-physician practices, community health centers, and urgent care centers
-across multiple product categories within the U.S. medical supplies
-industry. Our focus in on understanding how customer ordering practies
-impact supply chain distribution performance, utilizing the theoretical
-lens of data clumpiness, which relates to patterns of data
-non-conformity in terms of equal spacing. To conduct our analysis, we
-create a sample from a comprehensive invoice database spanning several
-years. We employ mixed-effects modeling techniques, accounting for
-cross-level interactions between product categories and customer
-organizations. Our findings reveal that customers who exhibit less
-clumpiness in their order-sizing and greater clumpiness in their
-order-timing practices contribute to increased distribution efficiency
-for the wholesale distributor. These effects are more pronounced when
-customers have greater experience within specific product categories and
-are less significant when ordering across multiple categories.
-Additionally, we observe that industry customers’ use of centralized
-purchasing tends to decrease the efficiency of the wholesale
-distributor. However, these negative effects can be mitigated when
-customers prioritize replenishment based on their actual needs and
-maintain consistent order sizing. Overall, our study not only offers
-practical implications but also extends our theoretical understanding of
-inventory management in relation to intermediary supply chain
-distribution efficiency. <a
-href="https://onlinelibrary.wiley.com/doi/abs/10.1111/poms.14068"
-target="_blank">Link</a></p>
-<h4
-id="the-moderating-effects-of-knowledge-characteristics-on-the-financial-value-of-innovative-technology-products-jom">The
-moderating effects of knowledge characteristics on the financial value
-of innovative technology products [JOM]</h4>
-<p>The development of innovative technology products is both costly and
-risky, and their economic value is highly uncertain. Developing a sample
-of 312 innovative technology products introduced between 1987 and 2006
-in the U.S. and a long-horizon event study with control firms, I explore
-the impact of innovative technology products on the long-term financial
-performance of a firm. In particular, we examine how the knowledge
-characteristics of the firm, which embrace its knowledge absorptive
-capacity, knowledge impact, and knowledge diversity, moderate such an
-impact. We find that on average an innovative technology product
-increases the firm’s return on assets (ROA) (relative to control firms)
-by 2.18% in the second year after product introduction. However, the
-value of an innovative technology product varies with the knowledge
-characteristics of the firm that invented it. We find that the financial
-impact of technology products is stronger when firms have higher
-knowledge absorptive capacity, and more impactful and less diversified
-knowledge (as measured by patents). We classify firms into three
-categories based on their knowledge characteristics. We find that firms
-with a high knowledge fit increase their ROA by 4.55% after product
-introduction, while those with a low knowledge fit receive no benefit
-from the innovative technology products at all.</p>
-<p><a
-href="https://onlinelibrary.wiley.com/doi/full/10.1016/j.jom.2013.11.003"
-target="_blank">Link</a></p>
-<div class="sourceCode" id="cb1"><pre
-class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<style>
+html {
+  scroll-behavior: smooth;
+}
+d-article {
+    contain: none;
+    padding-top: 0.5em;
+  }
+  
+d-title { 
+    padding-top: 3.5em;
+    padding-bottom: 2em;
+  }  
+  
+d-article nav {
+    max-width: 350px;
+  }  
+  
+@media (min-width: 1400px) {
+  .d-contents.d-contents-float {
+    height: 0;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    justify-self: right;
+    padding-right: 18em;
+    padding-left: 2em;
+  }
+}  
+  
+#TOC {
+  position: fixed; 
+  z-index: 50;
+  background: #f0f0f0;     /* or   background: white; */
+  padding: 15px;           /* optional */
+  border-radius: 5px;      /* optional */
+  }
+  
+#TOC h3 {
+  padding-top: 2px;
+  }  
+
+/* Hide the ToC when resized to mobile or tablet:  480px, 768px, 900px */
+@media screen and (max-width: 1500px) {
+#TOC {
+    position: relative;
+  }
+}
+</style>
+<h3 id="selected-publication-innovative-and-responsible-operations-management">1. Selected Publication – Innovative and Responsible Operations Management:</h3>
+<h4 id="towards-improving-factory-working-conditions-in-developing-countries-an-empirical-analysis-of-bangladesh-ready-made-garment-factories-msom">Towards improving factory working conditions in developing countries: An empirical analysis of Bangladesh Ready-Made garment factories [MSOM]</h4>
+<p>I initiate this stream of work to understand how global brands and firms manage their socially responsible practices via novel approaches in whole supply chains. In this study, we focus on factories in the Bangladesh ready-made garment (RMG) industry that supply North American and European retailers, as upstream suppliers in supply chains. The setting is unique, because with supply chains now extending into developing countries, time and again, working conditions in supplier factories have been found to be unsafe. After the disasters (e.g, building collapse, plant fire, etc.) the global retailers have adopted an innovative approach to improving the working conditions of supplier factories by forming consortiums. The consortium of North American retailers is the Alliance for Bangladesh Worker Safety (Alliance). The consortium of European retailers is the Accord on Fire and Building Safety in Bangladesh (Accord). The central question addressed in this study is: How do working conditions in a supplier factory impact its trustworthiness as seen from a retailer’s perspective? Our empirical analyses support the contention that retailers are sensitive to working condition risks in a supplier factory, i.e., as working condition risks in a supplier factory increase, its trustworthiness decreases. However, these relationships vary with the type of risk. The above findings, taken together, provide nuanced insights into the marketplace implications of working condition risks in supplier factories.
+<a href="https://pubsonline.informs.org/doi/10.1287/msom.2017.0679" target="_blank">Link</a></p>
+<h4 id="how-does-supplier-csr-performance-help-to-expand-exchange-relationships-with-major-buyers-the-moderating-role-of-supply-side-and-demand-driven-uncertainty-ds">How does supplier CSR performance help to expand exchange relationships with major buyers? The moderating role of supply-side and demand-driven uncertainty [DS]</h4>
+<p>I continue to investigate the implications of corporate social responsibility (CSR) performance on the supplier-buyer relationship in a supply chain context. Most existing works have been conducted from the buyer’s perspective. We take the supplier’s perspective and examine how suppliers leverage their CSR performance to expand exchange relationships with major customers. Specifically, we examine whether two supplier CSR performance dimensions—environmental and product performance—can serve as a mechanism to expand a supplier’s relationships with a smaller number of major buyers (which are developed to measure the exchange dependence relationship). We develop a large-scale longitudinal sample and find empirical evidence that a supplier’s environmental and product performance relate positively to greater customer dependence and improved financial performance across diverse sets of industries. However, the findings also reveal that both demand-driven and supply-side uncertainty can weaken the effect. Specifically, the positive effect of environmental performance tends to weaken in the face of supply-side uncertainty, whereas the positive effect of product performance tends to weaken amid demand-driven uncertainty. Our study contributes to the understanding of CSR from the resource dependence and social exchange perspective in supply chains.
+<a href="https://onlinelibrary.wiley.com/doi/10.1002/smj.3379" target="_blank">Link</a></p>
+<h3 id="selected-publication---managing-technology-and-process">2. Selected Publication - Managing Technology and Process:</h3>
+<h4 id="technology-licensing-and-productivity-growth-evidence-from-manufacturing-firms-in-developing-economies-msom">Technology licensing and productivity growth: Evidence from manufacturing firms in developing economies [MSOM]</h4>
+<p>Besides my work on the innovative and responsible operations management, I also study how firms can manage technology and process to achieve better effectiveness, capability, and performance. In this published paper, we examine the relationship between technology licensing and firm productivity. From an operational perspective, we investigate the role of knowledge sourcing and its contingency in the improvement of firm performance in developing economies. We study firms from South and East Asian countries and their adoption and use of foreign technology licensing to strengthen their technology capability and the implication on firms’ productivity growth. To investigate this, we analyze detailed data of manufacturing firms in the developing economies. Our results indicate that the adoption of foreign technology by developing economy manufacturing firms has a substantial short-run disruptive effect on firm operations with productivity growth declining by 4.5 percentage points in these firms relative to comparable firms that do not use foreign technology licensing. Toward mitigating such disruptive effects, we find that formal workforce training programs attenuate the negative relationship between technology licensing and productivity growth. However, infrastructural constraints in the external business environment amplify this negative relationship. Intriguingly, our results suggest that corruption in the firm’s external environment can attenuate the negative impact of technology licensing on productivity growth.
+<a href="https://pubsonline.informs.org/doi/10.1287/msom.2020.0946" target="_blank">Link</a></p>
+<h4 id="how-much-does-the-firms-alliance-network-matter-smj">How much does the firm’s alliance network matter? [SMJ]</h4>
+<p>Network is critical in operations and supply chain management, and in this study, we further explore the broad role of alliance network on firm performance. Extant work partitioning the variance in firm (business segment) profitability has identified industry, corporate parent, business segment, and time as key factors. However, this variance decomposition research stream has overlooked the role of network. We employ a fast-unfolding community-detection algorithm to detect firms’ network memberships and use the Shapley Value method to isolate the effect of the firm’s alliance network, in addition to industry, corporate parent, business segment, and year effects, on the variance in business unit performance. Our findings demonstrate that the effect of the firm’s alliance network explains 11% of the variance in firm ROA among 16,381 business segments from 1979 through 1996. Our results also hold when we extend the time period through 2018. Thus, our study provides strong empirical evidence that alliance networks of firms are critical to firm value creation.
+<a href="https://onlinelibrary.wiley.com/doi/10.1002/smj.3379" target="_blank">Link</a></p>
+<h4 id="government-support-and-cross-border-innovation-the-effect-of-chinas-innovative-city-policy-on-chinese-firms-patenting-in-the-u.s.-pom">Government support and cross-border innovation: The Effect of China’s innovative city policy on chinese firms’ patenting in the U.S. [POM]</h4>
+<p>In this project, we study how government support influence firms’ cross-border innovation.
+Firms innovate their new processes and products not only within their countries, but also across national boundaries. This is known as cross-border innovation. Like many countries, China initiated the national “innovative city” policy 2009 and has been supporting global innovation of firms in selected cities, to converge with more developed countries. Informed by Porter’s Diamond Model, we conceptualize government support as slack resources and investigates how it affects a firm’s inventive activities in an uncertain, competitive global market. This study examines Chinese firms’ patent filings in the U.S. under the enactment of the “innovative city” policy. We apply matching and generalized difference-in-differences (DiD) techniques to this staggered quasi-experimental setting and find that government support stimulates firms’ cross-border innovation. We further show that firms with higher R&amp;D capacity take better advantage of government support. Finally, we show that government support leads to a rebalancing of exploratory and exploitative innovation such that a firm that has conducted more exploration will perform more exploitation and vice versa. Taken together, this study extends our understanding of slack from internal resources to government support in the context of global operations. Findings suggest that government actions that improve the ecosystem of innovation in one country strengthen firms’ innovation and competitiveness overseas.
+<a href="https://onlinelibrary.wiley.com/doi/10.1111/poms.13941" target="_blank">Link</a></p>
+<h4 id="can-bots-help-create-knowledge-the-effects-of-bot-intervention-in-open-collaboration-dss">Can bots help create knowledge? The effects of bot intervention in open collaboration [DSS]</h4>
+<p>Over the past two decades, operations have become an essential part of management for many digital platforms. My recent work investigates the implication of the use of automated algorithmic agents, bots, on user participation and collaboration on a digital platform. This is because many open collaboration platforms (e.g., Wikipedia) have recently utilized bots to solve the issue of stagnating user participation. However, the impact of such a bot agent on user activities in open collaboration is unclear. In this study, we examine (i) whether bot intervention affects user participation, and (ii) whether the impact of bot intervention could vary by characteristics of open collaboration works. Utilizing a rich dataset from an online open collaboration platform from 2005 to 2017, we study two types of unique bots and their interactions with human users. The results from a difference-in-differences approach provide strong evidence that bot intervention in open collaboration leads to unintended consequences as it significantly demotivates user participation. We further show that the negative effect of bot intervention is alleviated if more active users are engaged or if covered topics have a higher concentration in collaboration work. This provides directions for businesses to resolve the unintended demotivation problem in utilizing bot agents.
+<a href="https://www.sciencedirect.com/science/article/pii/S0167923621001111" target="_blank">Link</a></p>
+<h4 id="how-much-do-customer-ordering-practices-drive-medical-supplies-distribution-inefficiency-for-primary-care-markets-pom">How much do customer ordering practices drive medical supplies distribution (in)efficiency for primary care markets? [POM]</h4>
+<p>In this project, we study how a leading wholesale distributor in the business-to-business (B2B) primary care marketplace manages efficient distribution while facing various customer ordering behaviors. This distributor specializes in providing non-acute health care products to physician practices, community health centers, and urgent care centers across multiple product categories within the U.S. medical supplies industry. Our focus in on understanding how customer ordering practies impact supply chain distribution performance, utilizing the theoretical lens of data clumpiness, which relates to patterns of data non-conformity in terms of equal spacing. To conduct our analysis, we create a sample from a comprehensive invoice database spanning several years. We employ mixed-effects modeling techniques, accounting for cross-level interactions between product categories and customer organizations. Our findings reveal that customers who exhibit less clumpiness in their order-sizing and greater clumpiness in their order-timing practices contribute to increased distribution efficiency for the wholesale distributor. These effects are more pronounced when customers have greater experience within specific product categories and are less significant when ordering across multiple categories. Additionally, we observe that industry customers’ use of centralized purchasing tends to decrease the efficiency of the wholesale distributor. However, these negative effects can be mitigated when customers prioritize replenishment based on their actual needs and maintain consistent order sizing. Overall, our study not only offers practical implications but also extends our theoretical understanding of inventory management in relation to intermediary supply chain distribution efficiency.
+<a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/poms.14068" target="_blank">Link</a></p>
+<h4 id="the-moderating-effects-of-knowledge-characteristics-on-the-financial-value-of-innovative-technology-products-jom">The moderating effects of knowledge characteristics on the financial value of innovative technology products [JOM]</h4>
+<p>The development of innovative technology products is both costly and risky, and their economic value is highly uncertain. Developing a sample of 312 innovative technology products introduced between 1987 and 2006 in the U.S. and a long-horizon event study with control firms, I explore the impact of innovative technology products on the long-term financial performance of a firm. In particular, we examine how the knowledge characteristics of the firm, which embrace its knowledge absorptive capacity, knowledge impact, and knowledge diversity, moderate such an impact. We find that on average an innovative technology product increases the firm’s return on assets (ROA) (relative to control firms) by 2.18% in the second year after product introduction. However, the value of an innovative technology product varies with the knowledge characteristics of the firm that invented it. We find that the financial impact of technology products is stronger when firms have higher knowledge absorptive capacity, and more impactful and less diversified knowledge (as measured by patents). We classify firms into three categories based on their knowledge characteristics. We find that firms with a high knowledge fit increase their ROA by 4.55% after product introduction, while those with a low knowledge fit receive no benefit from the innovative technology products at all.</p>
+<p><a href="https://onlinelibrary.wiley.com/doi/full/10.1016/j.jom.2013.11.003" target="_blank">Link</a></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
