@@ -20,6 +20,7 @@
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -455,8 +456,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
 
   <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-  <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
-  <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
+  <link href="site_libs/font-awesome-6.4.2/css/all.min.css" rel="stylesheet"/>
+  <link href="site_libs/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
   <script src="site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
   <script src="site_libs/fuse-6.4.1/fuse.min.js"></script>
@@ -785,6 +786,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   d-article table.gt_table td,
   d-article table.gt_table th {
     border-bottom: none;
+    font-size: 100%;
   }
 
   .html-widget {
@@ -1729,13 +1731,13 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
     });
 
-    // show d-appendix if we have appendix content
+    // show d-appendix if we have appendix conten
     $("d-appendix").css('display', appendix ? 'grid' : 'none');
 
-    // localize layout chunks to just output
+    // localize layout chunks to just outpu
     $('.layout-chunk').each(function(i, val) {
 
-      // capture layout
+      // capture layou
       var layout = $(this).attr('data-layout');
 
       // apply layout to markdown level block elements
@@ -1824,7 +1826,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       var doi = $('d-byline').find('h3:contains("DOI")');
       var doi_p = doi.next().empty();
       if (!front_matter.doi) {
-        // if we have a citation and valid citationText then link to that
+        // if we have a citation and valid citationText then link to tha
         if ($('#citation').length > 0 && front_matter.citationText) {
           doi.html('Citation');
           $('<a href="#citation"></a>')
@@ -1857,15 +1859,21 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        if ($(this).children()[0].nodeName == "D-FOOTNOTE") {
-          var fn = $(this).children()[0]
+        const citeChild = $(this).children()[0]
+        // Do not process if @xyz has been used without escaping and without bibliography activated
+        // https://github.com/rstudio/distill/issues/466
+        if (citeChild === undefined) return true
+
+        if (citeChild.nodeName == "D-FOOTNOTE") {
+          var fn = citeChild
           $(this).html(fn.shadowRoot.querySelector("sup"))
           $(this).id = fn.id
           fn.remove()
         }
         var refs = $(this).attr('data-cites').split(" ");
         var refHtml = refs.map(function(ref) {
-          return "<p>" + $('#ref-' + ref).html() + "</p>";
+          // Could use CSS.escape too here, we insure backward compatibility in navigator
+          return "<p>" + $('div[id="ref-' + ref + '"]').html() + "</p>";
         }).join("\n");
         window.tippy(this, {
           allowHTML: true,
@@ -2036,7 +2044,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     // add figcaption style to table captions
     $('caption').parent('table').addClass("figcaption");
 
-    // initialize posts list
+    // initialize posts lis
     if (window.init_posts_list)
       window.init_posts_list();
 
@@ -2064,16 +2072,16 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
-  <script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
-  <script src="site_libs/jquery-1.12.4/jquery.min.js"></script>
+  <script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
+  <script src="site_libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <link href="site_libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
   <script src="site_libs/leaflet-1.3.1/leaflet.js"></script>
   <link href="site_libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
   <script src="site_libs/proj4-2.6.2/proj4.min.js"></script>
   <script src="site_libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
   <link href="site_libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-  <script src="site_libs/leaflet-binding-2.1.1/leaflet.js"></script>
+  <script src="site_libs/leaflet-binding-2.2.0/leaflet.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2097,7 +2105,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
      Distill theme. Only edit values in the right column
      for each row; values shown are the CSS defaults.
      To return any property to the default,
-     you may set its value to: unset
+     you may set its value to: unse
      All rows must end with a semi-colon.                      */
 
   /* Optional: embed custom fonts here with `@import`          */
@@ -2143,7 +2151,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   /*-- ARTICLE APPENDIX --*/
   d-appendix {
     --heading-size:    15px;
-    --heading-color:   rgba(0, 0, 0, 0.65);      
+    --heading-color:   rgba(0, 0, 0, 0.65);
     --text-size:       0.9rem;                    /* edited */
     --text-color:      #1a162d;                   /* edited */
   }
@@ -2180,7 +2188,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     content: "> ";
   }
 
-  .distill-site-header { 
+  .distill-site-header {
     letter-spacing: 1px;
     text-transform: uppercase;
   }
@@ -2211,11 +2219,15 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   }
 
   d-article h4 {
-      font-size: 16px;
+      font-size: 1.2em;
+  }
+
+  d-article h3 {
+      font-size: 1.25em;
   }
 
   d-article p {
-      font-size: 16px;
+      font-size: 1.1em;
       line-height: 1.5;
   }
 
@@ -2252,6 +2264,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       grid-gap: 20px;
   }
 
+  p {
+    font-size: 1.15rem;
+  }
+
   h1 {
     font-size: 2rem;
   }
@@ -2273,8 +2289,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   .pub ul li {
     font-size: 0.95rem;
-  } 
+  }
 
+  .aboutme p {
+    font-size: 1.1rem;
+    text-indent: 20px;
+  }
 
   .rev-lists > ol {
     list-style-type:none;
@@ -2329,14 +2349,13 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
 <div class="d-article">
-<p>Below is a map that shows the location of the Department of
-Statistics, Iowa State University.</p>
+<p>Below is a map that shows the location of the
+Department of Statistics, Iowa State University.</p>
 <div class="layout-chunk" data-layout="l-body">
-<div id="htmlwidget-240a9dacb884512c5212" style="width:100%;height:384px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-240a9dacb884512c5212">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addPopups","args":[37.5447108170764,-77.4475369570394,"Here is the <b>Department of Supply Chain Management and Analytics<\/b>, VCU",null,null,{"maxWidth":300,"minWidth":50,"autoPan":true,"keepInView":false,"closeButton":true,"className":""}]}],"setView":[[37.5447108170764,-77.4475369570394],4,[]],"limits":{"lat":[37.5447108170764,37.5447108170764],"lng":[-77.4475369570394,-77.4475369570394]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-08ff8cee7d6cdd153992" style="width:100%;height:384px;"></div>
+<script type="application/json" data-for="htmlwidget-08ff8cee7d6cdd153992">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addPopups","args":[37.54471081707641,-77.4475369570394,"Here is the <b>Department of Supply Chain Management and Analytics<\/b>, VCU",null,null,{"maxWidth":300,"minWidth":50,"autoPan":true,"keepInView":false,"closeButton":true,"className":""}]}],"setView":[[37.54471081707641,-77.4475369570394],4,[]],"limits":{"lat":[37.54471081707641,37.54471081707641],"lng":[-77.4475369570394,-77.4475369570394]}},"evals":[],"jsHooks":[]}</script>
 </div>
-<div class="sourceCode" id="cb1"><pre
-class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
@@ -2353,7 +2372,12 @@ class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"><
 <!--radix_placeholder_navigation_after_body-->
 <div class="distill-site-nav distill-site-footer">
 <footer class="site-footer">
-<div align='middle'>
+
+  <div class="container" align='middle'>
+    <p class="powered-by">
+     &copy; Xiaojin (Jim) Liu 2026
+    </p>
+
           <script type="text/javascript"
           src="https://counter7.fcs.ovh/private/counter.js?c=175f5ade0bb1dbc7ee669eff1c409a98"></script>
           <br />
@@ -2364,16 +2388,11 @@ class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"><
               title="web counters" alt="web counters" />
             </a>
           </noscript>
-</div>
 
-  <div class="container" align='middle'>
-    <p class="powered-by">
-     &copy; Xiaojin (Jim) Liu 2022 
-    </p>
   </div>
-  
 
-        
+
+
 </footer>
 </div>
 <!--/radix_placeholder_navigation_after_body-->
