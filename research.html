@@ -1731,13 +1731,13 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
     });
 
-    // show d-appendix if we have appendix conten
+    // show d-appendix if we have appendix content
     $("d-appendix").css('display', appendix ? 'grid' : 'none');
 
-    // localize layout chunks to just outpu
+    // localize layout chunks to just output
     $('.layout-chunk').each(function(i, val) {
 
-      // capture layou
+      // capture layout
       var layout = $(this).attr('data-layout');
 
       // apply layout to markdown level block elements
@@ -1826,7 +1826,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       var doi = $('d-byline').find('h3:contains("DOI")');
       var doi_p = doi.next().empty();
       if (!front_matter.doi) {
-        // if we have a citation and valid citationText then link to tha
+        // if we have a citation and valid citationText then link to that
         if ($('#citation').length > 0 && front_matter.citationText) {
           doi.html('Citation');
           $('<a href="#citation"></a>')
@@ -2044,7 +2044,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     // add figcaption style to table captions
     $('caption').parent('table').addClass("figcaption");
 
-    // initialize posts lis
+    // initialize posts list
     if (window.init_posts_list)
       window.init_posts_list();
 
@@ -2096,7 +2096,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
      Distill theme. Only edit values in the right column
      for each row; values shown are the CSS defaults.
      To return any property to the default,
-     you may set its value to: unse
+     you may set its value to: unset
      All rows must end with a semi-colon.                      */
 
   /* Optional: embed custom fonts here with `@import`          */

@@ -1731,13 +1731,13 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
     });
 
-    // show d-appendix if we have appendix conten
+    // show d-appendix if we have appendix content
     $("d-appendix").css('display', appendix ? 'grid' : 'none');
 
-    // localize layout chunks to just outpu
+    // localize layout chunks to just output
     $('.layout-chunk').each(function(i, val) {
 
-      // capture layou
+      // capture layout
       var layout = $(this).attr('data-layout');
 
       // apply layout to markdown level block elements
@@ -1826,7 +1826,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       var doi = $('d-byline').find('h3:contains("DOI")');
       var doi_p = doi.next().empty();
       if (!front_matter.doi) {
-        // if we have a citation and valid citationText then link to tha
+        // if we have a citation and valid citationText then link to that
         if ($('#citation').length > 0 && front_matter.citationText) {
           doi.html('Citation');
           $('<a href="#citation"></a>')
@@ -2044,7 +2044,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     // add figcaption style to table captions
     $('caption').parent('table').addClass("figcaption");
 
-    // initialize posts lis
+    // initialize posts list
     if (window.init_posts_list)
       window.init_posts_list();
 
@@ -2105,7 +2105,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
      Distill theme. Only edit values in the right column
      for each row; values shown are the CSS defaults.
      To return any property to the default,
-     you may set its value to: unse
+     you may set its value to: unset
      All rows must end with a semi-colon.                      */
 
   /* Optional: embed custom fonts here with `@import`          */
@@ -2352,8 +2352,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <p>Below is a map that shows the location of the
 Department of Statistics, Iowa State University.</p>
 <div class="layout-chunk" data-layout="l-body">
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-08ff8cee7d6cdd153992" style="width:100%;height:384px;"></div>
-<script type="application/json" data-for="htmlwidget-08ff8cee7d6cdd153992">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addPopups","args":[37.54471081707641,-77.4475369570394,"Here is the <b>Department of Supply Chain Management and Analytics<\/b>, VCU",null,null,{"maxWidth":300,"minWidth":50,"autoPan":true,"keepInView":false,"closeButton":true,"className":""}]}],"setView":[[37.54471081707641,-77.4475369570394],4,[]],"limits":{"lat":[37.54471081707641,37.54471081707641],"lng":[-77.4475369570394,-77.4475369570394]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-386079a45430cada81d4" style="width:100%;height:384px;"></div>
+<script type="application/json" data-for="htmlwidget-386079a45430cada81d4">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addPopups","args":[37.54471081707641,-77.4475369570394,"Here is the <b>Department of Supply Chain Management and Analytics<\/b>, VCU",null,null,{"maxWidth":300,"minWidth":50,"autoPan":true,"keepInView":false,"closeButton":true,"className":""}]}],"setView":[[37.54471081707641,-77.4475369570394],4,[]],"limits":{"lat":[37.54471081707641,37.54471081707641],"lng":[-77.4475369570394,-77.4475369570394]}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
